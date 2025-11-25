@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="left">
+    <img src="img/ranger.png" alt="Imagem do carro" class="car-image">
+  </div>
+  <div class="right">
+    <img src="img/ford.png" alt="Logo Ford" class="logo">
+    <h2>Boas-vindas</h2>
+    <form (ngSubmit)="formloga()">
+      <div class="input-group login">
+        <div class="input-icon e-mail">
+          <i class="bi bi-person"></i>
+          <input [(ngModel)]="login.login" type="email" name="login" placeholder="Insira seu e-mail">
+        </div>
+        <div class="span">
+          <span class="info-icon"><i class="bi bi-info-circle"></i></span>
+        </div>
+      </div>
+
+      <div class="input-group login">
+        <div class="input-icon senha ">
+          <i class="bi bi-lock"></i>
+          <input [(ngModel)]="login.senha" type="password" name="senha" placeholder="Insira sua senha">
+        </div>
+        <div class="span"></div>
+      </div>
+
+      <label class="switch-wrapper">
+        <span class="switch-label">Logar automaticamente</span>
+        <input type="checkbox" id="auto-login" (click)="Lembrar()">
+        <span class="switch"></span>
+        <span class="info-icon2"><i class="bi bi-info-circle"></i></span>
+      </label>
+      <div class="btn">
+        <button type="submit" class="login-btn">Entrar</button>
+      </div>
+    </form>
+  </div>
+</div>

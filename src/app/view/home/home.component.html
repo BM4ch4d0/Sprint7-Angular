@@ -1,0 +1,35 @@
+<div class="background"></div>
+
+<header>
+  <div class="menu-icon" (click)="toggleSidebar()" aria-label="Abrir menu">
+    <i class="bi bi-list"></i>
+  </div>
+  <div class="logout-icon">
+    <i class="bi bi-power" (click)="logout()"></i>
+  </div>
+</header>
+
+<aside [class.active]="sidebarVisible" id="sidebar">
+  <div class="logo">
+    <img src="img/ford.png" alt="Logo Ford">
+  </div>
+  <nav>
+    <ul>
+      <a routerLink="/home" style="text-decoration: none;">
+        <li>Home</li>
+      </a>
+      <a routerLink="/dashboard" style="text-decoration: none;">
+        <li>Dashboard</li>
+      </a>
+    </ul>
+  </nav>
+</aside>
+
+<main>
+  <div class="card">
+    <div class="text-surface">
+      <h2>Sistema de dados FORD</h2>
+      <p>Seja bem-vindo(a)!</p>
+    </div>
+  </div>
+</main>

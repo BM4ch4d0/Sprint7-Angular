@@ -1,0 +1,238 @@
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.left {
+  flex: 1;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.70;
+}
+
+.car-image {
+  max-width: 90%;
+  height: auto;
+}
+
+.right {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  width: 200px;
+  margin-bottom: 20px;
+  margin-bottom: 3cqi;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #28a740;
+  margin-bottom: 30px;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login {
+  margin-bottom: 10px;
+}
+
+.span {
+  width: 10%;
+}
+
+.input-icon {
+  position: relative;
+  flex: 1;
+}
+
+.input-icon i {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #28a740;
+}
+
+.input-icon input {
+  width: 100%;
+  padding: 10px 10px 10px 35px;
+  font-size: 16px;
+  box-sizing: border-box;
+
+}
+
+.info-icon {
+  margin-left: 10px;
+  color: #28a740;
+}
+
+.switch-wrapper {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  margin-left: 85%;
+  font-size: 16px;
+  gap: 10px;
+}
+
+.switch-wrapper input[type="checkbox"] {
+  display: none;
+}
+
+.switch {
+  position: relative;
+  width: 50px;
+  height: 26px;
+  background-color: #ccc;
+  border-radius: 13px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.info-icon2 {
+  color: #28a740;
+}
+
+.switch::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+input[type="checkbox"]:checked+.switch {
+  background-color: #28a740;
+}
+
+input[type="checkbox"]:checked+.switch::before {
+  transform: translateX(24px);
+}
+
+.switch-label {
+  user-select: none;
+}
+
+.btn {
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  padding: 0;
+}
+
+.login-btn {
+  width: 90%;
+  background-color: #e0e0e0;
+  color: #a0a0a0;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  margin-top: 10px;
+
+}
+
+.login-btn:hover {
+  background-color: #28a740;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left,
+  .right {
+    flex: none;
+    width: 100%;
+    height: auto;
+  }
+
+  .car-image {
+    max-width: 100%;
+  }
+
+  .switch-wrapper {
+    margin-left: 0;
+    justify-content: center;
+  }
+
+  .btn {
+    justify-content: center;
+  }
+
+  .login-btn {
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .right {
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .input-icon input {
+    font-size: 14px;
+    padding: 10px 10px 10px 30px;
+  }
+
+  .switch-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .login-btn {
+    font-size: 14px;
+    padding: 10px;
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    width: 100px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .input-group,
+  .switch-wrapper,
+  .btn {
+    width: 100%;
+  }
+
+  .login-btn {
+    width: 100%;
+  }
+}

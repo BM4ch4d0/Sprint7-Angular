@@ -1,0 +1,101 @@
+<div class="background"></div>
+
+<header>
+  <div class="menu-icon" (click)="toggleSidebar()" aria-label="Abrir menu">
+    <i class="bi bi-list"></i>
+  </div>
+
+  <h1 class="header-title">Dashboard FORD</h1>
+
+  <div class="logout-icon">
+    <i class="bi bi-power" (click)="logout()"></i>
+  </div>
+</header>
+
+<aside [class.active]="sidebarVisible" id="sidebar">
+  <div class="logo">
+    <img src="img/ford.png" alt="Logo Ford" />
+  </div>
+  <nav>
+    <ul>
+      <a routerLink="/home" style="text-decoration: none;">
+        <li>Home</li>
+      </a>
+      <a routerLink="/dashboard" style="text-decoration: none;">
+        <li>Dashboard</li>
+      </a>
+    </ul>
+  </nav>
+</aside>
+
+<main class="dashboard-container" *ngIf="selectedVehicle">
+
+  <section class="metrics">
+    <div class="metric-card">
+      <div class="vehicle-selector">
+        <label for="veiculo">Veículo</label>
+        <select id="veiculo" #sel (change)="Select(sel.value)">
+          <option *ngFor="let v of vehicles" [value]="v.id">{{ v.vehicle }}</option>
+        </select>
+      </div>
+    </div>
+    <div class="metric-card">
+      <h3>Total de Vendas</h3>
+      <p>{{ selectedVehicle.volumetotal }}</p>
+      <h6>Unid</h6>
+    </div>
+    <div class="metric-card">
+      <h3>Conectados</h3>
+      <p>{{ selectedVehicle.connected }}</p>
+      <h6>Unid</h6>
+    </div>
+    <div class="metric-card">
+      <h3>Update Software</h3>
+      <p>{{ selectedVehicle.softwareUpdates }}</p>
+      <h6>Unid</h6>
+    </div>
+  </section>
+
+  <section class="vehicle-image">
+    <img [src]="selectedVehicle.img" [alt]="selectedVehicle.vehicle">
+  </section>
+
+  <section class="vehicle-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Código - VIN</th>
+          <th>Odômetro</th>
+          <th>Nível de Combustível</th>
+          <th>Status</th>
+          <th>Latitude</th>
+          <th>Longitude</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="text" id="codigo" [(ngModel)]="vin" (keyup)="Up()" placeholder="Digite o código VIN..." />
+          </td>
+          <ng-container *ngIf="vehicleData">
+            <td>{{vehicleData.odometro}}km</td>
+            <td>{{vehicleData.nivelCombustivel}}%</td>
+            <td>{{vehicleData.status}}</td>
+            <td>{{vehicleData.lat}}</td>
+            <td>{{vehicleData.long}}</td>
+          </ng-container>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr id="footer">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tfoot>
+    </table>
+
+  </section>
+</main>
