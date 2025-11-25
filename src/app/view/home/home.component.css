@@ -1,5 +1,5 @@
 .background {
-  background-image: url('./ranger.png');
+  background-image: url("../../../../public/img/ranger.png");
   background-repeat: no-repeat;
   background-position: center;
   position: fixed;

@@ -83,7 +83,7 @@ header {
 .dashboard-container {
   padding: 130px 20px 80px 20px;
   font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
+  background-color: #fff;
   min-height: 100vh;
   overflow-x: hidden;
 }
